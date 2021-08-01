@@ -13,3 +13,6 @@ Note: Some data are being populated on app startup using `InitialDataPopulator` 
 4) Get product by id: GET http://localhost:8080//products/{product_id}
 5) get category attributes by category id: GET http://localhost:8080/categories/{category_id}
 
+
+
+#### Database: H2: H2-console: http://localhost:8080/h2-console
