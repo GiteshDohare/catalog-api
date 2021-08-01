@@ -1,6 +1,7 @@
 # catalog-api
 
-Note: Some data are being populated on app startup using `InitialDataPopulator` class
+#### Note: Some data are being populated on app startup using `InitialDataPopulator` class
+I have used Lombok to reduce boilerplate setter/getters, so Lombok plugin for Eclipse/IntelliJ or other IDE needs to be setup
 
 #### Swagger Documentation: http://localhost:8080/v3/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
 
