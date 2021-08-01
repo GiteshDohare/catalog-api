@@ -3,6 +3,7 @@ package com.omnirio.catalog.controller;
 import com.omnirio.catalog.exception.CategoryNotFoundException;
 import com.omnirio.catalog.model.Attribute;
 import com.omnirio.catalog.model.Category;
+import com.omnirio.catalog.model.CategoryDTO;
 import com.omnirio.catalog.model.Product;
 import com.omnirio.catalog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class CategoryController {
     @PostMapping("/categories/{id}/attributes")
     public Attribute createAttribute(@PathVariable Long id, @RequestBody Attribute attribute) {
         Category category = categoryService.getCategoryById(id)
-                                .orElseThrow(() -> new CategoryNotFoundException(id));
+                .orElseThrow(() -> new CategoryNotFoundException(id));
 
         category.addAttribute(attribute);
         categoryService.saveCategory(category);
@@ -44,7 +45,11 @@ public class CategoryController {
     }
 
 
-
+    @GetMapping("/categories/{category_id}")
+    public CategoryDTO getCategoryAttributes(@PathVariable("category_id") Long id) {
+        Category category = categoryService.getCategoryById(id).orElseThrow(() -> new CategoryNotFoundException(id));
+        return new CategoryDTO(category.getId(), category.getName(), category.getAttributes());
+    }
 
     @GetMapping("/categories")
     public List<Category> getAllCategories() {
