@@ -1,6 +1,6 @@
 package com.omnirio.catalog.model;
 
-import com.omnirio.catalog.auditing.DateAudit;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -17,7 +17,8 @@ import java.util.List;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
 @Table(name = "categories")
-public class Category extends DateAudit {
+@JsonIgnoreProperties(value = "id", allowGetters = true)
+public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
