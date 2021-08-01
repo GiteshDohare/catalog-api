@@ -15,7 +15,8 @@ import javax.validation.constraints.NotBlank;
 @Table(name = "product_attributes", uniqueConstraints = {
         @UniqueConstraint(columnNames = {
                 "category_id",
-                "product_id"
+                "product_id",
+                "attribute_id"
         })
 })
 @JsonIgnoreProperties(value = {"id", "category", "attribute", "product"}, allowGetters = true)

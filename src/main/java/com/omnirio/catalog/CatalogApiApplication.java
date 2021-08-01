@@ -10,4 +10,6 @@ public class CatalogApiApplication {
 		SpringApplication.run(CatalogApiApplication.class, args);
 	}
 
+
+
 }
