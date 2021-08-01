@@ -5,21 +5,18 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "categories")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
+@Table(name = "categories")
 public class Category extends DateAudit {
 
     @Id
@@ -37,7 +34,7 @@ public class Category extends DateAudit {
             orphanRemoval = true
     )
 
-   // @Fetch(FetchMode.SELECT)
+    // @Fetch(FetchMode.SELECT)
     private List<Attribute> attributes = new ArrayList<>();
 
     public void addAttribute(Attribute attribute) {

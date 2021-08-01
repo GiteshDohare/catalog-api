@@ -6,10 +6,10 @@ import lombok.EqualsAndHashCode;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
-@Entity
-@Table(name = "attributes")
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
+@Table(name = "attributes")
 public class Attribute {
 
     @Id
