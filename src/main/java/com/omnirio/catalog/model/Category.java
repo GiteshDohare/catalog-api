@@ -36,9 +36,17 @@ public class Category {
             fetch = FetchType.EAGER,
             orphanRemoval = true
     )
-
     @Fetch(FetchMode.SELECT)
     private List<Attribute> attributes = new ArrayList<>();
+
+    @OneToMany(
+            mappedBy = "category",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER,
+            orphanRemoval = true
+    )
+    @Fetch(FetchMode.SELECT)
+    private List<Product> products = new ArrayList<>();
 
     public void addAttribute(Attribute attribute) {
         attributes.add(attribute);
@@ -48,6 +56,16 @@ public class Category {
     public void removeAttribute(Attribute attribute) {
         attributes.remove(attribute);
         attribute.setCategory(null);
+    }
+
+    public void addProduct(Product product) {
+        products.add(product);
+        product.setCategory(this);
+    }
+
+    public void removeProduct(Product product) {
+        products.remove(product);
+        product.setCategory(null);
     }
 
 }

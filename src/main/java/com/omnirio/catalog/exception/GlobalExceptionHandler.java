@@ -11,10 +11,10 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    // returning map, in real app a error resource can be created
-    @ExceptionHandler(CategoryNotFoundException.class)
+    // returning map, and handling generic exception in real app a error resource can be created
+    @ExceptionHandler(Exception.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String, String> handleCategoryNotFoundException(CategoryNotFoundException ex) {
+    public Map<String, String> handleCategoryNotFoundException(Exception ex) {
         return Collections.singletonMap("error", ex.getMessage());
     }
 

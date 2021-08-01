@@ -1,21 +1,22 @@
 package com.omnirio.catalog.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-
 @Entity
-@Table(name = "products", uniqueConstraints = {
-        @UniqueConstraint(columnNames = {
-                "category_id",
-                "attribute_id"
-        })
-})
+@Table(name = "products")
+@JsonIgnoreProperties(value = "id", allowGetters = true)
 public class Product {
 
     @Id
@@ -28,9 +29,8 @@ public class Product {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "category_id", nullable = false)
+    @JsonIgnore
     private Category category;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "attribute_id", nullable = false)
-    private Attribute attribute;
+
 }
