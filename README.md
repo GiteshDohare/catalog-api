@@ -3,7 +3,8 @@
 #### Note: Some data are being populated on app startup using `InitialDataPopulator` class
 I have used Lombok to reduce boilerplate setter/getters, so Lombok plugin for Eclipse/IntelliJ or other IDE needs to be setup
 
-#### Swagger Documentation: http://localhost:8080/v3/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
+#### Swagger Documentation: https://app.swaggerhub.com/apis-docs/giteshkumar94/catalog-api/1.0
+Local Swagger: http://localhost:8080/v3/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
 
 
 
