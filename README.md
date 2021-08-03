@@ -3,10 +3,13 @@
 #### Note: Some data are being populated on app startup using `InitialDataPopulator` class
 I have used Lombok to reduce boilerplate setter/getters, so Lombok plugin for Eclipse/IntelliJ or other IDE needs to be setup
 
-to run this you can directly use the release here: https://github.com/giteshkumar94/catalog-api/archive/refs/tags/catalog-api-0.0.1-SNAPSHOT.zip
-to run use: java -jar catalog-api-0.0.1-SNAPSHOT.zip
+### How to run:
+download and unzip the release: https://github.com/giteshkumar94/catalog-api/archive/refs/tags/catalog-api-0.0.1-SNAPSHOT.zip
 
-#### Swagger Documentation: https://app.swaggerhub.com/apis-docs/giteshkumar94/catalog-api/1.0
+run command: `java -jar catalog-api-0.0.1-SNAPSHOT.jar`
+
+
+### Swagger Documentation: https://app.swaggerhub.com/apis-docs/giteshkumar94/catalog-api/1.0
 Local Swagger: http://localhost:8080/v3/swagger-ui/index.html?configUrl=/v3/api-docs/swagger-config
 
 
